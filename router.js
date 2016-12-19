@@ -27,10 +27,7 @@ function home(req, res){
 }
 
 function user(req, res){
-	var username = req.url.replace("/", "");
-	if(username.length > 0 ){
-		res.writeHead(200, commonHeaders);
-	  	renderer.view("header",{}, res);
+	
 
 
 
@@ -42,10 +39,9 @@ function user(req, res){
 
 	  		//Store value which we need
 	  		var values = {
-	  			avatarUrl: profileJSON.gravatar_url,
-	  			username: profileJSON.profile_name,
-	  			badges: profileJSON.badges.length,
-	  			javascriptPoints: profileJSON.points.JavaScript
+	  			title: profileJSON.title,
+	  			description: profileJSON.description,
+	  			
 	  		}
 
 	  		//Simple response
